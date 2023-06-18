@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.supermarket.ui.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_pantallaDosFragment"
+            app:destination="@id/pantallaDosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantallaDosFragment"
+        android:name="com.example.supermarket.PantallaDosFragment"
+        android:label="fragment_pantalla_uno"
+        tools:layout="@layout/fragment_pantalla_dos" >
+        <action
+            android:id="@+id/action_pantallaDosFragment_to_pantallaTresFragment"
+            app:destination="@id/pantallaTresFragment" />
+        <action
+            android:id="@+id/action_pantallaDosFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantallaTresFragment"
+        android:name="com.example.supermarket.PantallaTresFragment"
+        android:label="fragment_pantalla_tres"
+        tools:layout="@layout/fragment_pantalla_tres" >
+        <action
+            android:id="@+id/action_pantallaTresFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_pantallaTresFragment_to_pantallaDosFragment"
+            app:destination="@id/pantallaDosFragment" />
+    </fragment>
+</navigation>
